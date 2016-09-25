@@ -14,11 +14,11 @@ local sndDie = file.Find("sound/hurtmod_rev/die/" .. "*", "GAME" )
 
 hook.Add("PlayerDeath","HS4PLYDie",function(victim,inflictor,attacker)
 victim:EmitSound("hurtmod_rev/die/" .. table.Random(sndDie))
-if inflictor:IsValid() && inflictor != victim then if math.random(1,2) == 1 then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end end
+if inflictor:IsValid() && inflictor != victim then if math.random(1,2) == 1 then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end
 end)
 
 
 hook.Add("OnNPCKilled","HS4NPCDie",function(npc,attacker,inflictor)
 npc:EmitSound("hurtmod_rev/die/" .. table.Random(sndDie))
-if inflictor:IsValid() && inflictor != victim then if math.random(1,2) == 1 then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end end
+if inflictor:IsValid() && inflictor != victim then if math.random(1,2) == 1 then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end
 end)
