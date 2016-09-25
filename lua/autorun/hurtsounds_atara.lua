@@ -9,16 +9,16 @@ CreateConVar("hurtsounds_humansonly",1,true,false)
 local delay = false // Delay for sounds for players.
 local npcdelay = false // Delay for sounds for NPCs.
 
-local sndTaunt = file.Find("sound/hurtmod_rev".."/taunt/" .. "*", "GAME" )
+local sndTaunt = file.Find("sound/hurtmod_rev/taunt/" .. "*", "GAME" )
+local sndDie = file.Find("sound/hurtmod_rev/die/" .. "*", "GAME" )
 
 hook.Add("PlayerDeath","HS4PLYDie",function(victim,inflictor,attacker)
-if inflictor:IsValid() && inflictor != victim then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end end
+victim:EmitSound("hurtmod_rev/die/" .. table.Random(sndDie))
+if inflictor:IsValid() && inflictor != victim then if math.random(1,2) == 1 then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end end
 end)
 
 
 hook.Add("OnNPCKilled","HS4NPCDie",function(npc,attacker,inflictor)
-if inflictor:IsValid() && inflictor != victim then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end end
+npc:EmitSound("hurtmod_rev/die/" .. table.Random(sndDie))
+if inflictor:IsValid() && inflictor != victim then if math.random(1,2) == 1 then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end end
 end)
-
-hook.Add("PlayerShouldTakeDamage", "HS4Player", playertakedm) // The hook that lets us check when a PLAYER has been injured.
-hook.Add("EntityTakeDamage", "HS4NPC", npctakedm) // The hook that lets us check when an NPC has been injured.
