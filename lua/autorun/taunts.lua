@@ -33,6 +33,7 @@ local taunts = {
     "deathsounds/tguychewbacca2.wav",
     "deathsounds/tguycallingpeopledicks.wav",
     "deathsounds/tguyfuckyou.wav",
+    "deathsounds/tguywhatsthatdumbasswantnow.wav",
     "deathsounds/tguytitdirt.wav"
 }
 

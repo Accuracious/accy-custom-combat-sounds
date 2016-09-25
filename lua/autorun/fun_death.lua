@@ -44,6 +44,7 @@ local fun = {
     "deathsounds/tguyhitinthedick.wav",
     "deathsounds/tguyluckyitwasnthard.wav",
     "deathsounds/tguyfuckyou.wav",
+    "deathsounds/tguywhatsthatdumbasswantnow.wav",
     "deathsounds/tguytitdirt.wav"
 }
 
