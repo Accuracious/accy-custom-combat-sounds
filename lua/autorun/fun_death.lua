@@ -1,0 +1,55 @@
+local fun = {
+    "deathsounds/awall.wav",
+    "deathsounds/grandma.wav",
+    "deathsounds/secretformula.wav",
+    "deathsounds/tguyahhshit.wav",
+    "deathsounds/tguyahshit.wav",
+    "deathsounds/tguymess.wav",
+    "deathsounds/tguyallthatbullshit.wav",
+    "deathsounds/tguybitchinchurch.wav",
+    "deathsounds/tguydairyqueen.wav",
+    "deathsounds/tguyfuck.wav",
+    "deathsounds/tguyfulldick.wav",
+    "deathsounds/tguyglasses.wav",
+    "deathsounds/tguysofuckhim.wav",
+    "deathsounds/getdown.wav",
+    "deathsounds/wtfyoulookingat.wav",
+    "deathsounds/dontrunawayfromme.wav",
+    "deathsounds/illendyou.wav",
+    "deathsounds/yousonofabitch.wav",
+    "deathsounds/tguybetterkoolaid.wav",
+    "deathsounds/tguyfatassonmychest.wav",
+    "deathsounds/tguyshaveyoursideburns.wav",
+    "deathsounds/tguyhavingchestpains.wav",
+    "deathsounds/tguyhorsemanure.wav",
+    "deathsounds/tguybilliardahshit.wav",
+    "deathsounds/tguygoddamnithurts.wav",
+    "deathsounds/tguyhotwater.wav",
+    "deathsounds/tguydamnicantbreathe.wav",
+    "deathsounds/ohhellno.wav",
+    "deathsounds/tguywouldntgooglelimpbiz.wav",
+    "deathsounds/tguyshitloadofmashedpotatoes.wav",
+    "deathsounds/tguyscotchtapeass.wav",
+    "deathsounds/tguyhowmuchass.wav",
+    "deathsounds/tguywasteofshit.wav",
+    "deathsounds/tguybuttfuck.wav",
+    "deathsounds/tguywhogivesashit.wav",
+    "deathsounds/tguychewbacca1.wav",
+    "deathsounds/tguyohshitdamnit.wav",
+    "deathsounds/tguybooschit.wav",
+    "deathsounds/tguysquirrelfuckingtomatoes.wav",
+    "deathsounds/tguyyouregrounded.wav",
+    "deathsounds/tguychewbacca2.wav",
+    "deathsounds/tguycallingpeopledicks.wav",
+    "deathsounds/tguyhitinthedick.wav",
+    "deathsounds/tguyluckyitwasnthard.wav",
+    "deathsounds/tguyfuckyou.wav",
+    "deathsounds/tguytitdirt.wav"
+}
+
+local function HappyDeathSounds(ent)
+	sound.Play( table.Random(fun), ent:GetPos(), "75", "100", "1" )
+end
+
+hook.Add( "OnNPCKilled", "NPCHappyDeathSounds", HappyDeathSounds )
+hook.Add( "PlayerDeath", "PlayerHappyDeathSounds", HappyDeathSounds )
