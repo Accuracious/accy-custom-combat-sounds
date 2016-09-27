@@ -16,7 +16,7 @@ local sndImpact = file.Find("sound/hurtmod_rev/imp/" .. "*", "GAME" )
 
 local function playertakedm(t,i) // Player is harmed.
 if !t:Alive() then return end
-if delay == true then return else delay = true timer.Simple(0.25, function() delay = false end) end
+if delay == true then return else delay = true timer.Simple(0.5, function() delay = false end) end
 
 // Always play flesh sound.
 t:EmitSound("hurtmod_rev/imp/" .. table.Random(sndImpact))
