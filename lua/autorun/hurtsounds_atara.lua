@@ -12,10 +12,14 @@ local npcdelay = false // Delay for sounds for NPCs.
 local sndTaunt = file.Find("sound/hurtmod_rev/taunt/" .. "*", "GAME" )
 local sndHurt = file.Find("sound/hurtmod_rev/hurt/" .. "*", "GAME" )
 local sndDie = file.Find("sound/hurtmod_rev/die/" .. "*", "GAME" )
+local sndImpact = file.Find("sound/hurtmod_rev/imp/" .. "*", "GAME" )
 
 local function playertakedm(t,i) // Player is harmed.
 if !t:Alive() then return end
 if delay == true then return else delay = true timer.Simple(0.25, function() delay = false end) end
+
+// Always play flesh sound.
+t:EmitSound("hurtmod_rev/imp/" .. table.Random(sndImpact))
 
 // Take a chance to play pain sound.
 if math.random(1,2) == 1 then t:EmitSound("hurtmod_rev/hurt/" .. table.Random(sndHurt)) end
