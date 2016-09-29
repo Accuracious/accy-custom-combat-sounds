@@ -22,13 +22,13 @@ if delay == true then return else delay = true timer.Simple(0.5, function() dela
 t:EmitSound("hurtmod_rev/imp/" .. table.Random(sndImpact))
 
 // Take a chance to play pain sound.
-if math.random(0,5) == 1 then t:EmitSound("hurtmod_rev/hurt/" .. table.Random(sndHurt)) end
+if math.random(1,4) == 1 then t:EmitSound("hurtmod_rev/hurt/" .. table.Random(sndHurt)) end
 
 end
 
 hook.Add("PlayerDeath","HS4PLYDie",function(victim,inflictor,attacker)
 victim:EmitSound("hurtmod_rev/die/" .. table.Random(sndDie))
-if inflictor:IsValid() && inflictor != victim then if math.random(0,5) == 1 then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end end
+if inflictor:IsValid() && inflictor != victim then if math.random(1,4) == 1 then inflictor:EmitSound("hurtmod_rev/taunt/" .. table.Random(sndTaunt)) end end
 end)
 
 hook.Add("PlayerShouldTakeDamage", "HS4Player", playertakedm) // The hook that lets us check when a PLAYER has been injured.
